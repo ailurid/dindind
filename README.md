@@ -15,11 +15,10 @@ docker run -it --rm --privileged my_image
 ```
 
 ```
-docker run -it --rm --privileged my_image
+docker buildx build --no-cache --progress=plain --builder insecure-builder --allow security.insecure .
 ```
 
 ```
-docker buildx build --no-cache --progress=plain --builder insecure-builder --allow security.insecure .
 docker buildx build --allow security.insecure .
 ```
 

@@ -33,6 +33,8 @@ WORKDIR /src
 
 RUN \
   --mount=type=bind,from=docker,source=/usr/local/bin/docker,target=/usr/bin/docker \
+  # doesn't work
+  # --mount=type=bind,from=docker,source=/var/run/docker.sock,target=/var/run/docker.sock \
   --security=insecure \
   npm install --omit=dev
 
