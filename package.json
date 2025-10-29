@@ -1,0 +1,17 @@
+{
+  "name": "hello-world-sdl",
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "old:build:wasm": "docker run --rm -v $(pwd)/lib:/src emscripten/emsdk:latest ./build.sh",
+    "build:wasm": "node ./scripts/compile-wasm.js",
+    "prepare": "npm run build:wasm",
+    "start": "http-server ./dist"
+  },
+  "dependencies": {
+    "http-server": "^14.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^24.9.2"
+  }
+}
